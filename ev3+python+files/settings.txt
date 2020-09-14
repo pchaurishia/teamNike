@@ -1,0 +1,30 @@
+In video 1C 'Set up VS Code' (and the corresponding page of the PDF document that contains the scripts of the videos) I encourage you to replace the contents of the user settings file 'settings.json' with the code below, after first having made a backup of the old setttings.json file. Don't confuse the settings.json file that holds the USER settings with the file of the same name that holds the PROJECT settings. Using project settings is optional and this course avoids using them for the sake of simplicity. When project settings ARE used they are placed in a folder called .vscode inside your project folder. Project settings override user settings.
+
+{
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [{
+            "name": "Download and Run",
+            "type": "ev3devBrowser",
+            "request": "launch",
+            "program": "/home/robot/${workspaceRootFolderName}/${relativeFile}"
+        },
+        {
+            "name": "Python: Current File (Integrated Terminal)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }]
+    },
+    "git.ignoreMissingGitWarning": false,
+    "ev3devBrowser.confirmDelete": false,
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "files.eol": "\n",
+    "ev3devBrowser.download.exclude": "{**/.*,LICENSE,README.md}",
+    "editor.fontSize": 15,
+    "debug.openDebug": "neverOpen",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "workbench.activityBar.visible": true,
+}
